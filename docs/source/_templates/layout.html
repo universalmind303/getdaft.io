@@ -1,0 +1,35 @@
+{% extends "!layout.html" %}
+
+{% block extrahead %}
+{{ super() }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YN4QSRPV0K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YN4QSRPV0K');
+</script>
+{% endblock %}
+
+{% block docs_sidebar %}
+<!-- OVERRIDE: We remove the sidebar in the landing page -->
+{% endblock %}
+
+{% block docs_main %}
+<!-- OVERRIDE: We remove navigational elements in the landing page -->
+{% include "sections/landing-page-body.html" %}
+
+<!-- Mobile menu that pops up when hamburger menu is clicked -->
+{% include "sections/mobile-menu.html" %}
+<script src="{{ pathto('_static/mobile-menu.js', 1) }}"></script>
+<script type="text/javascript">
+    mobileMenu.bind();
+</script>
+
+<!-- Workaround to hide flyout menu -->
+<div id="readthedocs-embed-flyout" style="display:none;"></div>
+{% endblock %}
