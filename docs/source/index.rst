@@ -69,11 +69,11 @@ Community
          </a>
       </div>
       <div class="features-row-box features-row-box-col-2">
-         <a href="https://discord.gg/eByWAQwTaP" style="display: block; height: 100%;">
+         <a href="https://join.slack.com/t/dist-data/shared_invite/zt-1t44ss4za-1rtsJNIsQOnjlf8BlG05yw" style="display: block; height: 100%;">
             <div class="centered clickable-box">
-               <img alt="Discord" height="36" width="auto" src="_static/discord-logo.svg"  style="margin-top: 16px"/>
-               <h4>Discord Server</h4>
-               <p>Chat with Daft devs and show off your projects!</p>
+               <img alt="Slack" height="36" width="auto" src="_static/slack.svg"  style="margin-top: 16px"/>
+               <h4>The Distributed Data Community Slack</h4>
+               <p>Come chat all things distributed data, and keep up to date with Daft development!</p>
             </div>
          </a>
       </div>
