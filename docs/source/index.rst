@@ -19,12 +19,62 @@ Installing Daft is simple with ``pip``:
 
    <div style="background: #333333; padding: 8px; margin: 12px; color: #f1f3f6; font-family: 'Roboto Mono', sans-serif; text-align: center; border-radius: 8px;">pip install getdaft</div>
 
-Video Demo
-^^^^^^^^^^
+----
+
+Community
+---------
 
 .. raw:: html
 
-    <div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/12b02103a23b47558a7655d410efa46b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+   <div class="features-row">
+      <!-- Begin Mailchimp Signup Form -->
+      <link href="https://cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+      <div class="newsletter-box" id="mc_embed_signup">
+         <form action="https://getdaft.us21.list-manage.com/subscribe/post?u=c75b7a12786ad63430f70538e&amp;id=3559ebae07&amp;f_id=0042b2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+            <h4>&#x1f44b; Hello from the Daft development team!</h4>
+            <div style="margin-top:8px;margin-bottom:8px"><p>We really appreciate that you took the time to visit our project!</p></div>
+            <div style="margin-top:8px;margin-bottom:8px"><p>You can keep up to date with the latest Daft features, talks and demos by dropping your email in the box below.</p></div>
+      <div class="mc-field-group">
+         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address" required>
+      </div>
+         <div id="mce-responses" class="clear foot">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+         </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c75b7a12786ad63430f70538e_3559ebae07" tabindex="-1" value=""></div>
+            <div class="optionalParent">
+                  <div class="clear foot">
+                     <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color:#7f5eeb">
+                  </div>
+            </div>
+         </div>
+      </form>
+      </div>
+      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+      <!--End mc_embed_signup-->
+   </div>
+
+   <div class="features-row">
+      <div class="features-row-box features-row-box-col-2">
+         <a href="https://github.com/Eventual-Inc/Daft/discussions" style="display: block; height: 100%;">
+            <div class="centered feature-box clickable-box">
+                  <img alt="Github Discussions" height="36" width="auto" src="_static/github-logo.png" style="margin-top: 16px"/>
+                  <h4>Github Discussions Forums</h4>
+                  <p>Post questions, suggest features and more</p>
+            </div>
+         </a>
+      </div>
+      <div class="features-row-box features-row-box-col-2">
+         <a href="https://join.slack.com/t/dist-data/shared_invite/zt-1t44ss4za-1rtsJNIsQOnjlf8BlG05yw" style="display: block; height: 100%;">
+            <div class="centered feature-box clickable-box">
+               <img alt="Slack" height="36" width="auto" src="_static/slack.svg"  style="margin-top: 16px"/>
+               <h4>The Distributed Data Community Slack</h4>
+               <p>Come chat all things distributed data!</p>
+            </div>
+         </a>
+      </div>
+   </div>
 
 ----
 
@@ -48,68 +98,6 @@ More Resources
          <h4>Docs</h4>
          <p>Developer documentation for referencing Daft APIs.</p>
          <a href="/projects/docs/en/latest/index.html">View Docs</a>
-      </div>
-   </div>
-
-----
-
-Community
----------
-
-.. raw:: html
-
-   <div>
-      <div class="features-row">
-         <div class="features-row-box features-row-box-col-2">
-            <a href="https://github.com/Eventual-Inc/Daft/discussions" style="display: block; height: 100%;">
-               <div class="centered feature-box clickable-box">
-                     <img alt="Github Discussions" height="36" width="auto" src="_static/github-logo.png" style="margin-top: 16px"/>
-                     <h4>Github Discussions Forums</h4>
-                     <p>Post questions, suggest features and more</p>
-               </div>
-            </a>
-         </div>
-         <div class="features-row-box features-row-box-col-2">
-            <a href="https://join.slack.com/t/dist-data/shared_invite/zt-1t44ss4za-1rtsJNIsQOnjlf8BlG05yw" style="display: block; height: 100%;">
-               <div class="centered feature-box clickable-box">
-                  <img alt="Slack" height="36" width="auto" src="_static/slack.svg"  style="margin-top: 16px"/>
-                  <h4>The Distributed Data Community Slack</h4>
-                  <p>Come chat all things distributed data!</p>
-               </div>
-            </a>
-         </div>
-      </div>
-      <div class="features-row">
-         <div class="features-row-box features-row-box-col-1">
-            <!-- Begin Mailchimp Signup Form -->
-            <link href="https://cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-            <div class="feature-box" id="mc_embed_signup">
-               <form action="https://getdaft.us21.list-manage.com/subscribe/post?u=c75b7a12786ad63430f70538e&amp;id=3559ebae07&amp;f_id=0042b2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                  <div id="mc_embed_signup_scroll">
-                  <h4>Subscribe to Newsletter</h4>
-                  <div style="margin-top:8px;margin-bottom:8px"><p>Stay up to date with new Daft releases, talks and tutorials!</p></div>
-            <div class="mc-field-group">
-               <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-            </label>
-               <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-               <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-            </div>
-               <div id="mce-responses" class="clear foot">
-                  <div class="response" id="mce-error-response" style="display:none"></div>
-                  <div class="response" id="mce-success-response" style="display:none"></div>
-               </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-               <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c75b7a12786ad63430f70538e_3559ebae07" tabindex="-1" value=""></div>
-                  <div class="optionalParent">
-                        <div class="clear foot">
-                           <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                        </div>
-                  </div>
-               </div>
-            </form>
-            </div>
-            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-            <!--End mc_embed_signup-->
-         </div>
       </div>
    </div>
 
