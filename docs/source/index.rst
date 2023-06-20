@@ -27,32 +27,11 @@ Community
 .. raw:: html
 
    <div class="features-row">
-      <!-- Begin Mailchimp Signup Form -->
-      <link href="https://cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-      <div class="newsletter-box" id="mc_embed_signup">
-         <form action="https://getdaft.us21.list-manage.com/subscribe/post?u=c75b7a12786ad63430f70538e&amp;id=3559ebae07&amp;f_id=0042b2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-            <h4>&#x1f44b; Hello from the Daft development team!</h4>
-            <div style="margin-top:8px;margin-bottom:8px"><p>We really appreciate that you took the time to visit our project!</p></div>
-            <div style="margin-top:8px;margin-bottom:8px"><p>You can keep up to date with the latest Daft features, talks and demos by dropping your email in the box below.</p></div>
-      <div class="mc-field-group">
-         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address" required>
-      </div>
-         <div id="mce-responses" class="clear foot">
-            <div class="response" id="mce-error-response" style="display:none"></div>
-            <div class="response" id="mce-success-response" style="display:none"></div>
-         </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c75b7a12786ad63430f70538e_3559ebae07" tabindex="-1" value=""></div>
-            <div class="optionalParent">
-                  <div class="clear foot">
-                     <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color:#7f5eeb">
-                  </div>
-            </div>
+      <div class="features-row-box features-row-box-col-1">
+         <div class="centered feature-box">
+            <iframe src="https://blog.getdaft.io/embed" width="320" height="320" frameborder="0" scrolling="no"></iframe>
          </div>
-      </form>
       </div>
-      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-      <!--End mc_embed_signup-->
    </div>
 
    <div class="features-row">
