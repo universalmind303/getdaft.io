@@ -71,7 +71,7 @@ More Resources
       <div class="features-row-box features-row-box-col-3">
          <h4>Tutorials</h4>
          <p>Hosted examples using Daft in various common use-cases.</p>
-         <a href="/projects/docs/en/latest/learn/tutorials.html">View Tutorials</a>
+         <a href="/projects/docs/en/latest/user_guide/tutorials.html">View Tutorials</a>
       </div>
       <div class="features-row-box features-row-box-col-3">
          <h4>Docs</h4>
