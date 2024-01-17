@@ -27,7 +27,7 @@ html_extra_path = ["_html"]
 html_theme = "sphinx_book_theme"
 html_static_path = ["_static"]
 html_css_files = ["header.css", "landing-page.css"]
-html_theme_options = {
-    "single_page": True,
+html_sidebars = {
+    "**": []
 }
 html_context = {"default_mode": "light"}
