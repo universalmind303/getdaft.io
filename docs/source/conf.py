@@ -30,3 +30,4 @@ html_css_files = ["header.css", "landing-page.css"]
 html_theme_options = {
     "single_page": True,
 }
+html_context = {"default_mode": "light"}
