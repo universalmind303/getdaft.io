@@ -8,13 +8,13 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("_active");
+    navMenu.classList.toggle("_active");
 })
 
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
+    hamburger.classList.remove("_active");
+    navMenu.classList.remove("_active");
 }))
 
 /* End of Nav Bar */   
@@ -50,17 +50,17 @@ tabs.forEach(function(tab) {
         var target = document.getElementById(currentActiveTabId);
         var targetMobile = document.getElementById(currentActiveTabId + "-mobile");
 
-        tabs.forEach(function(t) { t.classList.remove("active"); });
-        tab.classList.add("active");
+        tabs.forEach(function(t) { t.classList.remove("_active"); });
+        tab.classList.add("_active");
 
         if (window.innerWidth > 1100) {
-            tabContents.forEach(function(tc) { tc.classList.remove("active"); });
-            tabContentsMobile.forEach(function(tc) { tc.classList.remove("active"); }); // Deactivate mobile content
-            target.classList.add("active");
+            tabContents.forEach(function(tc) { tc.classList.remove("_active"); });
+            tabContentsMobile.forEach(function(tc) { tc.classList.remove("_active"); }); // Deactivate mobile content
+            target.classList.add("_active");
         } else {
-            tabContentsMobile.forEach(function(tc) { tc.classList.remove("active"); });
-            tabContents.forEach(function(tc) { tc.classList.remove("active"); }); // Deactivate regular content
-            targetMobile.classList.add("active");
+            tabContentsMobile.forEach(function(tc) { tc.classList.remove("_active"); });
+            tabContents.forEach(function(tc) { tc.classList.remove("_active"); }); // Deactivate regular content
+            targetMobile.classList.add("_active");
         }
     });
 });
@@ -75,11 +75,11 @@ function removeActiveClass() {
         var targetMobile = document.getElementById(currentActiveTabId + "-mobile");
 
         if (isAbove1100) {
-            tabContentsMobile.forEach(function(tc) { tc.classList.remove("active"); }); // Deactivate mobile content
-            target.classList.add("active");
+            tabContentsMobile.forEach(function(tc) { tc.classList.remove("_active"); }); // Deactivate mobile content
+            target.classList.add("_active");
         } else {
-            tabContents.forEach(function(tc) { tc.classList.remove("active"); }); // Deactivate regular content
-            targetMobile.classList.add("active");
+            tabContents.forEach(function(tc) { tc.classList.remove("_active"); }); // Deactivate regular content
+            targetMobile.classList.add("_active");
         }
 
         wasAbove1100 = isAbove1100;
