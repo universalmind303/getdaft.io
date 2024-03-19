@@ -783,6 +783,7 @@
 
   .nav-bar {
     padding: 30px 76px;
+    position: fixed;
   }
 
   .use-cases-section .tabs {
