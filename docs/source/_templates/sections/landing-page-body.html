@@ -198,8 +198,10 @@
           <div class="use-cases-box">
             <div class="left-use-cases">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
+                Daft exposes a powerful type system that can represent complex datatypes such as JSON,
+                URLs, Images and Tensors. Operations can be expressed using Daft's Expressions
+                API, allowing for easy manipulation of these complex datatypes that is then lazily executed
+                on Daft's blazing fast Rust core engine.
               </p>
               <img src="_static/use-cases-1.png" class="use-cases-image" />
             </div>
@@ -210,21 +212,12 @@
 2
 3   df = daft.from_pydict(
 4       {
-5           "A": ["foo", "bar", "foo", "bar", "foo", 
-6           "bar", "foo", "foo"],
-7           "B": ["a", "a", "b", "c", "b", "b", "a", "c"],
-8           "C": [i for i in range(8)],
-9           "D": [i for i in range(8)],
+5           "image_urls": ["a", "b", "c"],
 11      }
 12  )
-13  grouped_df = df.groupby(df["A"])
-14  aggregated_df = grouped_df.agg(
-15      [
-16          (grouped_df["C"].alias("C_sum"), "sum"),
-17          (grouped_df["D"].alias("D_mean"), "mean"),
-18      ]
-19  )
-20  aggregated_df.collect() 
+13  df = df.with_column("data", df["image_urls"].url.download())
+14  df = df.with_column("images", df["data"].image.decode())
+15  df.show()
                         </code>
                         </pre>
             </div>
@@ -247,8 +240,11 @@
           <div class="use-cases-box">
             <div class="left-use-cases">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
+                Daft supports large-scale tabular batch data processing with its familiar DataFrame interface.
+                Its Rust I/O engine is heavily tuned for cloud based workloads, and boasts record-setting efficiency
+                when reading and writing data in formats such as Apache Parquet. Daft also applies powerful
+                optimizations with its built in query optimizer, ensuring that your query is executed efficiently
+                when run on data at terabyte-scales.
               </p>
               <img src="_static/use-cases-2.png" class="use-cases-image" />
             </div>
@@ -257,23 +253,9 @@
                         <code class="language-python">
 1   import daft
 2
-3   df = daft.from_pydict(
-4       {
-5           "A": ["foo", "bar", "foo", "bar", "foo", 
-6           "bar", "foo", "foo"],
-7           "B": ["a", "a", "b", "c", "b", "b", "a", "c"],
-8           "C": [i for i in range(8)],
-9           "D": [i for i in range(8)],
-11      }
-12  )
-13  grouped_df = df.groupby(df["A"])
-14  aggregated_df = grouped_df.agg(
-15      [
-16          (grouped_df["C"].alias("C_sum"), "sum"),
-17          (grouped_df["D"].alias("D_mean"), "mean"),
-18      ]
-19  )
-20  aggregated_df.collect()
+3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
+4   df = df.sort("foo")
+5   df.write_parquet("s3://destination-bucket/")
                         </code>
                         </pre>
             </div>
@@ -296,8 +278,11 @@
           <div class="use-cases-box">
             <div class="left-use-cases">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
+                Daft provides tight integration with frameworks such as Pytorch and Ray to efficiently ingest data into
+                your data-hungry ML model training workloads. Its blazing fast I/O and kernels allows for maximizing
+                GPU utilization by pipelining your data through downloading, pre-processing and random per-epoch shuffling.
+                Daft also leverages Apache Arrow memory formats, allowing for zero-copy data transfer between dataloading
+                and model training.
               </p>
               <img src="_static/use-cases-3.png" class="use-cases-image" />
             </div>
@@ -306,23 +291,9 @@
                         <code class="language-python">
 1   import daft
 2
-3   df = daft.from_pydict(
-4       {
-5           "A": ["foo", "bar", "foo", "bar", "foo", 
-6           "bar", "foo", "foo"],
-7           "B": ["a", "a", "b", "c", "b", "b", "a", "c"],
-8           "C": [i for i in range(8)],
-9           "D": [i for i in range(8)],
-11      }
-12  )
-13  grouped_df = df.groupby(df["A"])
-14  aggregated_df = grouped_df.agg(
-15      [
-16          (grouped_df["C"].alias("C_sum"), "sum"),
-17          (grouped_df["D"].alias("D_mean"), "mean"),
-18      ]
-19  )
-20  aggregated_df.collect()
+3   df = daft.read_json("s3://my-json-files/**/*.json")
+4   df = df.with_column("features", run_featurization(df["data"]))
+5   pytorch_dataset = df.to_torch_iter_dataset()
                         </code>
                         </pre>
             </div>
@@ -345,8 +316,9 @@
           <div class="use-cases-box">
             <div class="left-use-cases">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua
+                Daft is built for usage from interactive environments such as Jupyter notebooks. This lets
+                you perform interactive explorations of your data with just your local development environment.
+                Daft's expressions API also lets you perform operations such as groupby, aggregations and joins.
               </p>
               <img src="_static/use-cases-4.png" class="use-cases-image" />
             </div>
@@ -385,8 +357,10 @@
         <div class="use-cases-box">
           <div class="left-use-cases">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
+              Daft exposes a powerful type system that can represent complex datatypes such as JSON,
+              URLs, Images and Tensors. Operations can be expressed using Daft's Expressions
+              API, allowing for easy manipulation of these complex datatypes that is then lazily executed
+              on Daft's blazing fast Rust core engine.
             </p>
             <img src="_static/use-cases-1.png" class="use-cases-image" />
           </div>
@@ -395,23 +369,12 @@
                     <code class="language-python" style="background: var(--light-background)">
 1   import daft
 2
-3   df = daft.from_pydict(
-4       {
-5           "A": ["foo", "bar", "foo", "bar", "foo", 
-6           "bar", "foo", "foo"],
-7           "B": ["a", "a", "b", "c", "b", "b", "a", "c"],
-8           "C": [i for i in range(8)],
-9           "D": [i for i in range(8)],
-11      }
-12  )
-13  grouped_df = df.groupby(df["A"])
-14  aggregated_df = grouped_df.agg(
-15      [
-16          (grouped_df["C"].alias("C_sum"), "sum"),
-17          (grouped_df["D"].alias("D_mean"), "mean"),
-18      ]
-19  )
-20  aggregated_df.collect() 
+3   df = daft.from_pydict({
+4       "image_urls": ["a", "b", "c"],
+5   })
+6   df = df.with_column("data", df["image_urls"].url.download())
+7   df = df.with_column("images", df["data"].image.decode())
+8   df.show()
                     </code>
                     </pre>
           </div>
@@ -424,8 +387,11 @@
         <div class="use-cases-box">
           <div class="left-use-cases">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
+              Daft supports large-scale tabular batch data processing with its familiar DataFrame interface.
+              Its Rust I/O engine is heavily tuned for cloud based workloads, and boasts record-setting efficiency
+              when reading and writing data in formats such as Apache Parquet. Daft also applies powerful
+              optimizations with its built in query optimizer, ensuring that your query is executed efficiently
+              when run on data at terabyte-scales.
             </p>
             <img src="_static/use-cases-2.png" class="use-cases-image" />
           </div>
@@ -434,23 +400,9 @@
                     <code class="language-python">
 1   import daft
 2
-3   df = daft.from_pydict(
-4       {
-5           "A": ["foo", "bar", "foo", "bar", "foo", 
-6           "bar", "foo", "foo"],
-7           "B": ["a", "a", "b", "c", "b", "b", "a", "c"],
-8           "C": [i for i in range(8)],
-9           "D": [i for i in range(8)],
-11      }
-12  )
-13  grouped_df = df.groupby(df["A"])
-14  aggregated_df = grouped_df.agg(
-15      [
-16          (grouped_df["C"].alias("C_sum"), "sum"),
-17          (grouped_df["D"].alias("D_mean"), "mean"),
-18      ]
-19  )
-20  aggregated_df.collect()
+3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
+4   df = df.sort("foo")
+5   df.write_parquet("s3://destination-bucket/")
                     </code>
                     </pre>
           </div>
@@ -463,8 +415,11 @@
         <div class="use-cases-box">
           <div class="left-use-cases">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
+              Daft provides tight integration with frameworks such as Pytorch and Ray to efficiently ingest data into
+              your data-hungry ML model training workloads. Its blazing fast I/O and kernels allows for maximizing
+              GPU utilization by pipelining your data through downloading, pre-processing and random per-epoch shuffling.
+              Daft also leverages Apache Arrow memory formats, allowing for zero-copy data transfer between dataloading
+              and model training.
             </p>
             <img src="_static/use-cases-3.png" class="use-cases-image" />
           </div>
@@ -473,23 +428,9 @@
                     <code class="language-python">
 1   import daft
 2
-3   df = daft.from_pydict(
-4       {
-5           "A": ["foo", "bar", "foo", "bar", "foo", 
-6           "bar", "foo", "foo"],
-7           "B": ["a", "a", "b", "c", "b", "b", "a", "c"],
-8           "C": [i for i in range(8)],
-9           "D": [i for i in range(8)],
-11      }
-12  )
-13  grouped_df = df.groupby(df["A"])
-14  aggregated_df = grouped_df.agg(
-15      [
-16          (grouped_df["C"].alias("C_sum"), "sum"),
-17          (grouped_df["D"].alias("D_mean"), "mean"),
-18      ]
-19  )
-20  aggregated_df.collect()
+3   df = daft.read_json("s3://my-json-files/**/*.json")
+4   df = df.with_column("features", run_featurization(df["data"]))
+5   pytorch_dataset = df.to_torch_iter_dataset()
                     </code>
                     </pre>
           </div>
@@ -502,8 +443,9 @@
         <div class="use-cases-box">
           <div class="left-use-cases">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
+              Daft is built for usage from interactive environments such as Jupyter notebooks. This lets
+              you perform interactive explorations of your data with just your local development environment.
+              Daft's expressions API also lets you perform operations such as groupby, aggregations and joins.
             </p>
             <img src="_static/use-cases-4.png" class="use-cases-image" />
           </div>
