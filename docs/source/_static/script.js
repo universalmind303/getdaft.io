@@ -25,11 +25,11 @@ fetch('https://api.github.com/repos/Eventual-Inc/Daft')
 .then(response => response.json())
 .then(data => {
     const stargazersCount = data.stargazers_count;
-    document.getElementById('stargazers-count').innerHTML = `Stars&nbsp;&nbsp;&nbsp;${stargazersCount}`;
+    document.getElementById('stargazers-count').innerHTML = `Stars&nbsp;&nbsp;&nbsp;&nbsp;${stargazersCount}`;
 })
 .catch(error => {
     console.error('Error fetching data:', error);
-    document.getElementById('stargazers-count').innerHTML = 'Stars&nbsp;&nbsp;&nbsp;----';
+    document.getElementById('stargazers-count').innerHTML = 'Stars&nbsp;&nbsp;&nbsp;&nbsp;1601';
 });
 
 /* End of Github Stars */ 

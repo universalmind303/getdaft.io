@@ -10,13 +10,11 @@
             <a
               href="https://www.github.com/Eventual-Inc/Daft"
               id="stargazers-count"
-              >Stars&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a
+              >Stars&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a
             >
           </li>
           <li class="nav-menu-item">
-            <a href="/projects/docs/en/latest/10-min.html" class="nav-link"
-              >Get Started</a
-            >
+            <a href="#get-started" class="nav-link">Get Started</a>
           </li>
           <li class="nav-menu-item">
             <a href="/projects/docs/" class="nav-link">Documentation</a>
@@ -43,7 +41,7 @@
   </header>
   <section class="hero-section">
     <h1 class="h1">
-      Fast and Distributed <br />
+      Fast and Distributed<br />
       Python Query Engine
     </h1>
 
@@ -57,13 +55,15 @@
       <a href="/projects/docs/en/latest/install.html" class="btn dark"
         >pip install getdaft</a
       >
-      <a href="/projects/docs/en/latest/index.html" class="btn light"
+      <a
+        href="/projects/docs/en/latest/index.html"
+        class="btn light dark-border"
         >see documentation</a
       >
     </div>
   </section>
 
-  <section class="capabilites-section">
+  <section class="capabilites-section" id="get-started">
     <div class="wrapper">
       <p class="eyebrow-text">CAPABILITIES</p>
       <h2 class="h2 capabilities-header-responsive">
@@ -94,7 +94,7 @@
                 >read more</a
               >
             </p>
-            <img src="_static/capabilites-1.png" class="capability-image" />
+            <img src="_static/capabilities-1.png" class="capability-image" />
           </div>
 
           <div class="capability-card right">
@@ -113,7 +113,7 @@
                 >read more</a
               >
             </p>
-            <img src="_static/capabilites-2.png" class="capability-image" />
+            <img src="_static/capabilities-2.png" class="capability-image" />
           </div>
 
           <div class="capability-card bottom">
@@ -130,7 +130,7 @@
                 >read more</a
               >
             </p>
-            <img src="_static/capabilites-3.png" class="capability-image" />
+            <img src="_static/capabilities-3.png" class="capability-image" />
           </div>
 
           <div class="capability-card middle bottom">
@@ -149,7 +149,7 @@
                 >read more</a
               >
             </p>
-            <img src="_static/capabilites-4.png" class="capability-image" />
+            <img src="_static/capabilities-4.png" class="capability-image" />
           </div>
 
           <div class="capability-card right bottom">
@@ -166,7 +166,7 @@
                 >read more</a
               >
             </p>
-            <img src="_static/capabilites-5.png" class="capability-image" />
+            <img src="_static/capabilities-5.png" class="capability-image" />
           </div>
         </div>
       </div>
@@ -208,20 +208,20 @@
             </div>
             <div class="right-use-cases">
               <pre class="pre-code">
-                        <code class="language-python" style="background: var(--light-background)">
-1   import daft
-2
-3   df = daft.from_pydict(
-4       {
-5           "image_urls": ["a", "b", "c"],
-6       }
-7   )
-8
-9   df = df.with_column("data", df["image_urls"].url.download())
-10  df = df.with_column("images", df["data"].image.decode())
-11  df.show()
-                        </code>
-                        </pre>
+                          <code class="language-python" style="background: var(--light-background)">
+  1   import daft
+  2
+  3   df = daft.from_pydict(
+  4       {
+  5           "image_urls": ["a", "b", "c"],
+  6       }
+  7   )
+  8
+  9   df = df.with_column("data", df["image_urls"].url.download())
+  10  df = df.with_column("images", df["data"].image.decode())
+  11  df.show()
+                          </code>
+                          </pre>
             </div>
           </div>
         </div>
@@ -254,15 +254,15 @@
             </div>
             <div class="right-use-cases">
               <pre class="pre-code">
-                        <code class="language-python" style="background: var(--light-background)">
-1   import daft
-2
-3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
-4   df = df.sort("foo")
-5
-6   df.write_parquet("s3://destination-bucket/")
-                        </code>
-                        </pre>
+                          <code class="language-python" style="background: var(--light-background)">
+  1   import daft
+  2
+  3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
+  4   df = df.sort("foo")
+  5
+  6   df.write_parquet("s3://destination-bucket/")
+                          </code>
+                          </pre>
             </div>
           </div>
         </div>
@@ -296,18 +296,18 @@
             </div>
             <div class="right-use-cases">
               <pre class="pre-code">
-                        <code class="language-python" style="background: var(--light-background)">
-1   import daft
-2
-3   df = daft.read_json("s3://my-json-files/**/*.json")
-4   df = df.with_column(
-5       "features", 
-6       run_featurization(df["data"])
-7   )
-8
-9   pytorch_dataset = df.to_torch_iter_dataset()
-                        </code>
-                        </pre>
+                          <code class="language-python" style="background: var(--light-background)">
+  1   import daft
+  2
+  3   df = daft.read_json("s3://my-json-files/**/*.json")
+  4   df = df.with_column(
+  5       "features", 
+  6       run_featurization(df["data"])
+  7   )
+  8
+  9   pytorch_dataset = df.to_torch_iter_dataset()
+                          </code>
+                          </pre>
             </div>
           </div>
         </div>
@@ -338,24 +338,24 @@
             </div>
             <div class="right-use-cases">
               <pre class="pre-code">
-                        <code class="language-python" style="background: var(--light-background)">
-1   import daft
-2
-3   df = daft.from_pydict(
-4       {
-5           "A": ["foo", "bar", "foo", "bar"],
-6           "B": [i for i in range(4)],
-7       }
-8   )
-9   grouped_df = df.groupby(df["A"])
-10  aggregated_df = grouped_df.agg(
-11      [
-12          (grouped_df["B"].alias("B_sum"), "sum"),
-13      ]
-14  )
-16  aggregated_df.collect()
-                        </code>
-                        </pre>
+                          <code class="language-python" style="background: var(--light-background)">
+  1   import daft
+  2
+  3   df = daft.from_pydict(
+  4       {
+  5           "A": ["foo", "bar", "foo", "bar"],
+  6           "B": [i for i in range(4)],
+  7       }
+  8   )
+  9   grouped_df = df.groupby(df["A"])
+  10  aggregated_df = grouped_df.agg(
+  11      [
+  12          (grouped_df["B"].alias("B_sum"), "sum"),
+  13      ]
+  14  )
+  16  aggregated_df.collect()
+                          </code>
+                          </pre>
             </div>
           </div>
         </div>
@@ -377,19 +377,19 @@
           </div>
           <div class="right-use-cases">
             <pre class="pre-code">
-                    <code class="language-python" style="background: var(--light-background)">
-1   import daft
-2
-3   df = daft.from_pydict({
-4       "image_urls": ["a", "b", "c"],
-5   })
-6
-7   df = df.with_column("data", df["image_urls"].url.download())
-8   df = df.with_column("images", df["data"].image.decode())
-9
-10  df.show()
-                    </code>
-                    </pre>
+                      <code class="language-python" style="background: var(--light-background)">
+  1   import daft
+  2
+  3   df = daft.from_pydict({
+  4       "image_urls": ["a", "b", "c"],
+  5   })
+  6
+  7   df = df.with_column("data", df["image_urls"].url.download())
+  8   df = df.with_column("images", df["data"].image.decode())
+  9
+  10  df.show()
+                      </code>
+                      </pre>
           </div>
         </div>
       </div>
@@ -412,15 +412,15 @@
           </div>
           <div class="right-use-cases">
             <pre class="pre-code">
-                    <code class="language-python" style="background: var(--light-background)">
-1   import daft
-2
-3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
-4   df = df.sort("foo")
-5
-6   df.write_parquet("s3://destination-bucket/")
-                    </code>
-                    </pre>
+                      <code class="language-python" style="background: var(--light-background)">
+  1   import daft
+  2
+  3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
+  4   df = df.sort("foo")
+  5
+  6   df.write_parquet("s3://destination-bucket/")
+                      </code>
+                      </pre>
           </div>
         </div>
       </div>
@@ -443,18 +443,18 @@
           </div>
           <div class="right-use-cases">
             <pre class="pre-code">
-                    <code class="language-python" style="background: var(--light-background)">
-1   import daft
-2
-3   df = daft.read_json("s3://my-json-files/**/*.json")
-4   df = df.with_column(
-5       "features", 
-6       run_featurization(df["data"])
-7   )
-8
-9   pytorch_dataset = df.to_torch_iter_dataset()
-                    </code>
-                    </pre>
+                      <code class="language-python" style="background: var(--light-background)">
+  1   import daft
+  2
+  3   df = daft.read_json("s3://my-json-files/**/*.json")
+  4   df = df.with_column(
+  5       "features", 
+  6       run_featurization(df["data"])
+  7   )
+  8
+  9   pytorch_dataset = df.to_torch_iter_dataset()
+                      </code>
+                      </pre>
           </div>
         </div>
       </div>
@@ -475,24 +475,24 @@
           </div>
           <div class="right-use-cases">
             <pre class="pre-code">
-                    <code class="language-python" style="background: var(--light-background)">
-1   import daft
-2
-3   df = daft.from_pydict(
-4       {
-5           "A": ["foo", "bar", "foo", "bar"],
-6           "B": [i for i in range(4)],
-7       }
-8   )
-9   grouped_df = df.groupby(df["A"])
-10  aggregated_df = grouped_df.agg(
-11      [
-12          (grouped_df["B"].alias("B_sum"), "sum"),
-13      ]
-14  )
-16  aggregated_df.collect()
-                    </code>
-                    </pre>
+                      <code class="language-python" style="background: var(--light-background)">
+  1   import daft
+  2
+  3   df = daft.from_pydict(
+  4       {
+  5           "A": ["foo", "bar", "foo", "bar"],
+  6           "B": [i for i in range(4)],
+  7       }
+  8   )
+  9   grouped_df = df.groupby(df["A"])
+  10  aggregated_df = grouped_df.agg(
+  11      [
+  12          (grouped_df["B"].alias("B_sum"), "sum"),
+  13      ]
+  14  )
+  16  aggregated_df.collect()
+                      </code>
+                      </pre>
           </div>
         </div>
       </div>
@@ -536,10 +536,10 @@
               /></a>
             </li>
             <!-- <li class="ecosystem-item">
-              <a href="" class="ecosystem-link"
-                ><img src="_static/polars.png" class="ecosystem-image"
-              /></a>
-            </li> -->
+                <a href="" class="ecosystem-link"
+                  ><img src="_static/polars.png" class="ecosystem-image"
+                /></a>
+              </li> -->
           </ul>
           <p class="bold" style="font-size: 20px">Storage and Infrastructure</p>
           <ul class="ecosystem-list">
@@ -615,8 +615,8 @@
             <img src="_static/blog.png" id="left-blog-image" />
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod. By Sammy Sidhu
+            Join us as we explore innovative ways to handle vast datasets,
+            optimize performance, and revolutionize your data workflows!
           </p>
           <div class="iframe-div">
             <iframe
@@ -760,8 +760,8 @@
             ><img src="_static/linkedin.png" class="social-image"
           /></a>
           <!-- <a href="" class="social-link"
-            ><img src="_static/youtube.png" class="social-image"
-          /></a> -->
+              ><img src="_static/youtube.png" class="social-image"
+            /></a> -->
           <a
             href="https://join.slack.com/t/dist-data/shared_invite/zt-1t44ss4za-1rtsJNIsQOnjlf8BlG05yw"
             class="social-link"
@@ -793,8 +793,8 @@
             >
           </li>
           <!-- <li class="footer-item">
-            <a href="" class="footer-link">Privacy Policy</a>
-          </li> -->
+              <a href="" class="footer-link">Privacy Policy</a>
+            </li> -->
         </ul>
       </div>
     </div>
