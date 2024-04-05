@@ -389,13 +389,13 @@
 }
 
 .use-cases-section .wrapper-use-cases .wrapper .use-cases-box .left-use-cases {
-  max-width: 50%;
+  width: 50%;
   padding: 10px 0px;
   gap: 100px;
 }
 
 .use-cases-section .wrapper-use-cases .wrapper .use-cases-box .right-use-cases {
-  max-width: 50%;
+  width: 50%;
   font-size: 14px;
   padding: 0px 15px;
   overflow: hidden;
@@ -683,6 +683,7 @@
 
 .footer .footer-list {
   list-style: none;
+  margin-top: 16px;
 }
 
 .footer .footer-list .footer-item {
@@ -722,7 +723,7 @@
 .footer .footer-left {
   display: flex;
   flex-direction: column;
-  gap: 105px;
+  gap: 61px;
 }
 
 .footer-social {
@@ -739,6 +740,12 @@
 .footer-links {
   display: flex;
   gap: 30px;
+}
+
+/* Back to top button */
+
+#pst-back-to-top {
+    background-color: var(--purple-title-text);
 }
 
 /* Responsive */
@@ -819,7 +826,7 @@
     .wrapper
     .use-cases-box
     .left-use-cases {
-    max-width: 100%;
+    width: 100%;
   }
 
   .use-cases-section
@@ -827,7 +834,7 @@
     .wrapper
     .use-cases-box
     .right-use-cases {
-    max-width: 100%;
+    width: 100%;
   }
 
   .use-cases-section
@@ -1105,7 +1112,7 @@
   }
 
   .footer .footer-left {
-    gap: 120px;
+    gap: 74px;
   }
 
   .ecosystem-section .wrapper .right-ecosystem {

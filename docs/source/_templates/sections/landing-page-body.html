@@ -217,9 +217,15 @@
   6       }
   7   )
   8
-  9   df = df.with_column("data", df["image_urls"].url.download())
-  10  df = df.with_column("images", df["data"].image.decode())
-  11  df.show()
+  9   df = df.with_column(
+  10      "data", 
+  11      df["image_urls"].url.download()
+  12  )
+  13  df = df.with_column(
+  14      "images", 
+  15      df["data"].image.decode()
+  16  )
+  17  df.show()
                           </code>
                           </pre>
             </div>
@@ -257,10 +263,12 @@
                           <code class="language-python" style="background: var(--light-background)">
   1   import daft
   2
-  3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
-  4   df = df.sort("foo")
-  5
-  6   df.write_parquet("s3://destination-bucket/")
+  3   df = daft.read_parquet(
+  4       "s3://source-bucket/**/*.parquet"
+  5   )
+  6   df = df.sort("foo")
+  7
+  8   df.write_parquet("s3://destination-bucket/")
                           </code>
                           </pre>
             </div>
