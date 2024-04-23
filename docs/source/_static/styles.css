@@ -191,7 +191,11 @@
 }
 
 .nav-menu #stargazers-count {
-  background: linear-gradient(to right, #E0E0E0 60%, var(--light-background) 40%);
+  background: linear-gradient(
+    to right,
+    #e0e0e0 60%,
+    var(--light-background) 40%
+  );
   border: 1px solid var(--gray-outline);
   color: var(--body-black);
   border-radius: 3.26px;
@@ -204,10 +208,10 @@
 
 .nav-menu #stargazers-count::before {
   content: "";
-  background-image: url('star.png');
+  background-image: url("star.png");
   background-size: 17.33px 16px;
   display: inline-block;
-  width: 17.33px; 
+  width: 17.33px;
   height: 16px;
   margin-right: 5px;
 }
@@ -316,7 +320,7 @@
 
 .use-cases-section .wrapper {
   margin: 0 auto;
-  padding: 75px 76px 25px 76px
+  padding: 75px 76px 25px 76px;
 }
 
 .use-cases-section .tabs {
@@ -525,8 +529,7 @@
   justify-content: space-between;
 }
 
-
-.community-section .wrapper .left-two-thirds .left-blog .top-blog .header{
+.community-section .wrapper .left-two-thirds .left-blog .top-blog .header {
   margin-bottom: 40px;
 }
 
@@ -537,6 +540,14 @@
 
 .community-section .wrapper .left-two-thirds .left-community {
   padding: 25px 75px 25px 0px;
+}
+
+.community-section
+  .wrapper
+  .left-two-thirds
+  .left-community
+  .community-content {
+  margin-top: 25px;
 }
 
 .community-section
@@ -745,7 +756,7 @@
 /* Back to top button */
 
 #pst-back-to-top {
-    background-color: var(--purple-title-text);
+  background-color: var(--purple-title-text);
 }
 
 /* Responsive */
@@ -926,6 +937,7 @@
   }
   .community-section .wrapper .left-two-thirds .left-community {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding-right: 0px;
   }
