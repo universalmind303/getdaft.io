@@ -436,16 +436,8 @@
 
 /* Testimonial */
 
-/* .testimonial-section .wrapper {
-  margin: 35px auto;
-  max-width: 75%;
-  padding: 25px 76px;
-  margin: 0 auto;
-  padding: 75px 76px 25px 76px;
-} */
-
 .testimonials .wrapper {
-  margin: 0 auto;
+  margin: 0 auto 50px;
   padding: 75px 76px 25px 76px;
 }
 
@@ -457,21 +449,20 @@
 }
 
 .testimonials .customer-quotes .quote-box {
-  /* flex: 0 0 auto; Take up 100% width on mobile */
-  height: 250px;
-  width: 50%;
-  margin: 4px 10px;
-  padding: 10px 16px;
-  box-sizing: border-box; /* Ensures padding is included in the total width/height */
+  flex: 0 0 auto; /* Take up 100% width on mobile */
+  height: 290px;
+  width: 390px;
+  margin: 4px 8px;
+  padding: 8px 12px;
   text-align: left;
   border: 1px solid var(--purple-title-text);
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* position: relative;  */
+  position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
 .testimonials .quote-box .h2 {
@@ -480,6 +471,7 @@
   line-height: 1.4;
   color: black;
   flex: 1;
+  margin-bottom: 10px;
 }
 
 .testimonials .quote-box .h2 b{
@@ -494,10 +486,11 @@
   width: 100%;
   padding-top: 10px;
   border-top: 1px solid #e0e0e0;
+  margin-top: 25px;
 }
 
 .testimonials .quote-box .customer-name {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   margin-top: 0px;
   margin-bottom: 2px;
@@ -512,7 +505,7 @@
 
 .testimonials .quote-box .customer-logo {
   max-height: 30px;
-  max-width: 125px;
+  max-width: 110px;
   object-fit: contain;
   margin-bottom: 5px;
 }
@@ -835,6 +828,12 @@
 }
 
 /* Responsive */
+
+@media (max-width: 1400px) {
+  .testimonials .customer-quotes {
+      flex-wrap: wrap;
+  }
+}
 
 @media (max-width: 1240px) {
   .use-cases-section
