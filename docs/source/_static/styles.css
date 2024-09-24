@@ -2,7 +2,7 @@
   --body-black: #000000;
   --light-background: #f2f4f3;
   /* --purple-title-text: #611cf4; */
-  --purple-title-text: #7862ff;
+  --purple-title-text: #6953f3;
   --gray-outline: #cccccc;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .btn.dark {
-  background-color: #6953f3;
+  background-color: var(--purple-title-text);
   color: var(--light-background);
   transition-duration: 0.3s;
 }
