@@ -1,9 +1,9 @@
 :root {
   --body-black: #000000;
   --light-background: #f2f4f3;
-  --purple-title-text: #611cf4;
+  /* --purple-title-text: #611cf4; */
+  --purple-title-text: #7862ff;
   --gray-outline: #cccccc;
-  --blue-button: #5363f3;
 }
 
 *,
@@ -42,7 +42,7 @@
 }
 
 .h2 {
-  color: #611cf4;
+  color: var(--purple-title-text);
   font-size: 36px;
   font-family: Kanit;
   font-weight: 300;
@@ -450,12 +450,12 @@
 
 .testimonials .customer-quotes .quote-box {
   flex: 0 0 auto; /* Take up 100% width on mobile */
-  height: 290px;
+  height: 295px;
   width: 390px;
-  margin: 4px 8px;
-  padding: 8px 12px;
+  margin: 10px 10px;
+  padding: 16px 18px;
   text-align: left;
-  border: 1px solid var(--purple-title-text);
+  border: 1px solid var(--gray-outline);
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -475,7 +475,6 @@
 }
 
 .testimonials .quote-box .h2 b{
-  font-weight: 600;
   color: var(--purple-title-text);
 }
 
@@ -497,7 +496,7 @@
 }
 
 .testimonials .quote-box .customer-role {
-  font-size: 16px;
+  font-size: 14px;
   color: gray;
   margin-top: 0px;
   margin-bottom: 5px;
