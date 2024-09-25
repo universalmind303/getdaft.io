@@ -434,35 +434,42 @@
   background-color: var(--gray-outline);
 }
 
-/* Testimonial */
+/* Testimonials */
 
 .testimonials .wrapper {
-  margin: 0 auto 50px;
+  margin: 0 auto;
   padding: 75px 76px 25px 76px;
 }
 
 .testimonials .customer-quotes {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  flex: 1;
+  height: 320px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  max-width: 1290px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .testimonials .customer-quotes .quote-box {
   flex: 0 0 auto; /* Take up 100% width on mobile */
-  height: 295px;
-  width: 390px;
-  margin: 10px 10px;
+  height: 285px;
+  width: 450px;
+  margin: 10px;
   padding: 16px 18px;
   text-align: left;
   border: 1px solid var(--gray-outline);
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  scroll-snap-align: start;
 }
 
 .testimonials .quote-box .h2 {
@@ -482,17 +489,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   padding-top: 10px;
   border-top: 1px solid #e0e0e0;
+  height: 80px;
   margin-top: 25px;
+  margin-bottom: 0px;
 }
 
 .testimonials .quote-box .customer-name {
   font-size: 20px;
   font-weight: 400;
   margin-top: 0px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .testimonials .quote-box .customer-role {
@@ -500,13 +509,13 @@
   color: gray;
   margin-top: 0px;
   margin-bottom: 5px;
+  line-height: 1.2;
 }
 
 .testimonials .quote-box .customer-logo {
   max-height: 30px;
-  max-width: 110px;
+  max-width: 120px;
   object-fit: contain;
-  margin-bottom: 5px;
 }
 
 /* Ecosystem */
@@ -828,12 +837,6 @@
 
 /* Responsive */
 
-@media (max-width: 1400px) {
-  .testimonials .customer-quotes {
-      flex-wrap: wrap;
-  }
-}
-
 @media (max-width: 1240px) {
   .use-cases-section
     .wrapper-use-cases
@@ -1076,12 +1079,17 @@
     padding-right: 16px;
   }
 
-  .testimonial-section .wrapper {
+  .testimonials .wrapper {
     padding-left: 16px;
     padding-right: 16px;
     margin-left: 0px;
     margin-right: 0px;
     max-width: 100%;
+  }
+
+  .testimonials .customer-quotes {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .ecosystem-section .wrapper {
