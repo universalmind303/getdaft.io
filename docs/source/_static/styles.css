@@ -52,6 +52,7 @@
 
 .bold {
   font-weight: 700;
+  color: var(--purple-title-text);
 }
 
 .thin {
@@ -383,7 +384,7 @@
   gap: 30px;
   position: relative;
   max-width: 1290px;
-  margin: 0px auto;
+  margin: 20px auto;
 }
 
 .use-cases-section .wrapper-use-cases .wrapper .use-cases-box .use-cases-image {
@@ -396,6 +397,7 @@
   width: 50%;
   padding: 10px 0px;
   gap: 100px;
+  margin: 20px;
 }
 
 .use-cases-section .wrapper-use-cases .wrapper .use-cases-box .right-use-cases {

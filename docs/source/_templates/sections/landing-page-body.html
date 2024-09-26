@@ -46,9 +46,7 @@
     </h1>
 
     <p class="hero-content">
-      Daft is a framework for ETL, analytics and ML/AI at scale. Its familiar
-      Python Dataframe API is built to outperform Spark in performance and ease
-      of use.
+      Daft is a unified data engine for <b class="bold">data engineering</b>, <b class="bold"> analytics</b> and <b class="bold">ML/AI</b>. Daft exposes both <b class="bold">SQL and Python DataFrame interfaces</b> as first-class citizens and is written in Rust.
     </p>
 
     <div class="button-section">
@@ -67,8 +65,8 @@
     <div class="wrapper">
       <p class="eyebrow-text">USE CASES</p>
       <h2 class="h2">
-        Daft provides a familar and easy to use <br />
-        Python dataframe API for:
+        Daft exposes both SQL and Python<br />
+        DataFrame interfaces for:
       </h2>
     </div>
     <div class="tabs">
@@ -79,7 +77,7 @@
           id="MultimodalID"
           data-target="Multimodal"
           data-target-mobile="Multimodal-mobile"
-          >Multimodal Data Processing</a
+          >Data Engineering</a
         >
       </div>
       <div class="wrapper-use-cases mobile" id="Multimodal-mobile">
@@ -129,7 +127,7 @@
           class="title"
           data-target="Batch-Data"
           data-target-mobile="Batch-Data-mobile"
-          >Batch Data Processing</a
+          >Data Processing</a
         >
       </div>
       <div class="wrapper-use-cases mobile" id="Batch-Data-mobile">
@@ -172,7 +170,7 @@
           class="title"
           data-target="ML-Training"
           data-target-mobile="ML-Training-mobile"
-          >Data Ingestion for ML Training</a
+          >ML/AI</a
         >
       </div>
       <div class="wrapper-use-cases mobile" id="ML-Training-mobile">
@@ -210,84 +208,22 @@
           </div>
         </div>
       </div>
-      <hr class="use-cases-line" width="1" size="60" />
-      <div class="tab">
-        <a
-          href=""
-          class="title"
-          data-target="EDA"
-          data-target-mobile="EDA-mobile"
-          >EDA (Data Science at Scale)</a
-        >
-      </div>
-      <div class="wrapper-use-cases mobile" id="EDA-mobile">
-        <!--Mobile content-->
-        <div class="wrapper">
-          <div class="use-cases-box">
-            <div class="left-use-cases">
-              <p>
-                Daft is built for usage from interactive environments such as
-                Jupyter notebooks. This lets you perform interactive
-                explorations of your data with just your local development
-                environment. Daft's expressions API also lets you perform
-                operations such as groupby, aggregations and joins.
-              </p>
-              <img src="_static/use-cases-4.png" class="use-cases-image" />
-            </div>
-            <div class="right-use-cases">
-              <pre class="pre-code">
-                          <code class="language-python" style="background: var(--light-background)">
-  1   import daft
-  2
-  3   df = daft.from_pydict(
-  4       {
-  5           "A": ["foo", "bar", "foo", "bar"],
-  6           "B": [i for i in range(4)],
-  7       }
-  8   )
-  9   grouped_df = df.groupby(df["A"])
-  10  aggregated_df = grouped_df.agg(
-  11      [
-  12          (grouped_df["B"].alias("B_sum"), "sum"),
-  13      ]
-  14  )
-  16  aggregated_df.collect()
-                          </code>
-                          </pre>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="wrapper-use-cases" id="Multimodal">
       <div class="wrapper">
+        <p>Daft provides the local performance and memory stability of DuckDB and Polars, with the scalability of Apache Spark</p>
         <div class="use-cases-box">
           <div class="left-use-cases">
+            <p>ETL</p>
             <p>
-              Daft exposes a powerful type system that can represent complex
-              datatypes such as JSON, URLs, Images and Tensors. Operations can
-              be expressed using Daft's Expressions API, allowing for easy
-              manipulation of these complex datatypes that is then lazily
-              executed on Daft's blazing fast Rust core engine.
+              Perform data engineering on messy multimodal data at scales ranging from MB to PB, on a single node or a distributed cluster.
             </p>
-            <img src="_static/use-cases-1.png" class="use-cases-image" />
+            <!-- <img src="_static/use-cases-1.png" class="use-cases-image" /> -->
           </div>
           <div class="right-use-cases">
-            <pre class="pre-code">
-                      <code class="language-python" style="background: var(--light-background)">
-  1   import daft
-  2
-  3   df = daft.from_pydict({
-  4       "image_urls": ["a", "b", "c"],
-  5   })
-  6
-  7   df = df.with_column("data", df["image_urls"].url.download())
-  8   df = df.with_column("images", df["data"].image.decode())
-  9
-  10  df.show()
-                      </code>
-                      </pre>
+            <p>Cloud-Native</p>
+            <p>Native integrations with modern cloud storage (e.g. S3), open catalogs and table formats (e.g. Apache Iceberg, Delta Lake), and open data formats (e.g. Apache Parquet).</p>
           </div>
         </div>
       </div>
@@ -297,18 +233,17 @@
       <div class="wrapper">
         <div class="use-cases-box">
           <div class="left-use-cases">
+            <p>Local Analytics</p>
             <p>
-              Daft supports large-scale tabular batch data processing with its
-              familiar DataFrame interface. Its Rust I/O engine is heavily tuned
-              for cloud based workloads, and boasts record-setting efficiency
-              when reading and writing data in formats such as Apache Parquet.
-              Daft also applies powerful optimizations with its built in query
-              optimizer, ensuring that your query is executed efficiently when
-              run on data at terabyte-scales.
+              Snappy interactive data exploration and aggregations from Python notebooks using DataFrames or SQL iwth the performance and development experience of local engines such as DuckDB and Polars.
             </p>
-            <img src="_static/use-cases-2.png" class="use-cases-image" />
+            <!-- <img src="_static/use-cases-2.png" class="use-cases-image" /> -->
           </div>
           <div class="right-use-cases">
+            <p>Distributed Analytics</p>
+            <p>
+              Powerful capabilities to scale to the cloud when required to process larger datasets, outperforming distributed analytics engines, such as Spark and Trino.
+            </p>
             <pre class="pre-code">
                       <code class="language-python" style="background: var(--light-background)">
   1   import daft
@@ -358,43 +293,6 @@
       </div>
     </div>
 
-    <div class="wrapper-use-cases" id="EDA">
-      <div class="wrapper">
-        <div class="use-cases-box">
-          <div class="left-use-cases">
-            <p>
-              Daft is built for usage from interactive environments such as
-              Jupyter notebooks. This lets you perform interactive explorations
-              of your data with just your local development environment. Daft's
-              expressions API also lets you perform operations such as groupby,
-              aggregations and joins.
-            </p>
-            <img src="_static/use-cases-4.png" class="use-cases-image" />
-          </div>
-          <div class="right-use-cases">
-            <pre class="pre-code">
-                      <code class="language-python" style="background: var(--light-background)">
-  1   import daft
-  2
-  3   df = daft.from_pydict(
-  4       {
-  5           "A": ["foo", "bar", "foo", "bar"],
-  6           "B": [i for i in range(4)],
-  7       }
-  8   )
-  9   grouped_df = df.groupby(df["A"])
-  10  aggregated_df = grouped_df.agg(
-  11      [
-  12          (grouped_df["B"].alias("B_sum"), "sum"),
-  13      ]
-  14  )
-  16  aggregated_df.collect()
-                      </code>
-                      </pre>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- <section class="testimonial-section">
