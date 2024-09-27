@@ -212,18 +212,40 @@
 
     <div class="wrapper-use-cases" id="Multimodal">
       <div class="wrapper">
-        <p>Daft provides the local performance and memory stability of DuckDB and Polars, with the scalability of Apache Spark</p>
         <div class="use-cases-box">
           <div class="left-use-cases">
-            <p>ETL</p>
+            <p>Daft provides the local performance and memory stability of DuckDB and Polars, with the scalability of Apache Spark.</p>
+            <h3>Extract → Transform → Load (ETL)</h3>
             <p>
               Perform data engineering on messy multimodal data at scales ranging from MB to PB, on a single node or a distributed cluster.
             </p>
+
+            <h3>Cloud-Native</h3>
+            <p>Native integrations with modern cloud storage (e.g. S3), open catalogs and table formats (e.g. Apache Iceberg, Delta Lake), and open data formats (e.g. Apache Parquet).</p>
             <!-- <img src="_static/use-cases-1.png" class="use-cases-image" /> -->
           </div>
           <div class="right-use-cases">
-            <p>Cloud-Native</p>
-            <p>Native integrations with modern cloud storage (e.g. S3), open catalogs and table formats (e.g. Apache Iceberg, Delta Lake), and open data formats (e.g. Apache Parquet).</p>
+            <pre class="pre-code">
+              <code class="language-python" style="background: var(--light-background)">
+1   import daft
+2
+3   df = daft.from_pydict(
+4       {
+5           "image_urls": ["a", "b", "c"],
+6       }
+7   )
+8
+9   df = df.with_column(
+10      "data", 
+11      df["image_urls"].url.download()
+12  )
+13  df = df.with_column(
+14      "images", 
+15      df["data"].image.decode()
+16  )
+17  df.show()
+              </code>
+              </pre>
           </div>
         </div>
       </div>
@@ -233,17 +255,18 @@
       <div class="wrapper">
         <div class="use-cases-box">
           <div class="left-use-cases">
-            <p>Local Analytics</p>
+            <p>Daft provides a SQL interface with the snappiness of local engines such as DuckDB and scalability of engines such as Spark and Trino.</p>
+            <h3>Local Analytics</h3>
             <p>
               Snappy interactive data exploration and aggregations from Python notebooks using DataFrames or SQL iwth the performance and development experience of local engines such as DuckDB and Polars.
+            </p>
+            <h3>Distributed Analytics</h3>
+            <p>
+              Powerful capabilities to scale to the cloud when required to process larger datasets, outperforming distributed analytics engines, such as Spark and Trino.
             </p>
             <!-- <img src="_static/use-cases-2.png" class="use-cases-image" /> -->
           </div>
           <div class="right-use-cases">
-            <p>Distributed Analytics</p>
-            <p>
-              Powerful capabilities to scale to the cloud when required to process larger datasets, outperforming distributed analytics engines, such as Spark and Trino.
-            </p>
             <pre class="pre-code">
                       <code class="language-python" style="background: var(--light-background)">
   1   import daft
@@ -264,13 +287,15 @@
         <div class="use-cases-box">
           <div class="left-use-cases">
             <p>
-              Daft provides tight integration with frameworks such as Pytorch
-              and Ray to efficiently ingest data into your data-hungry ML model
-              training workloads. Its blazing fast I/O and kernels allows for
-              maximizing GPU utilization by pipelining your data through
-              downloading, pre-processing and random per-epoch shuffling. Daft
-              also leverages Apache Arrow memory formats, allowing for zero-copy
-              data transfer between dataloading and model training.
+              Daft replaces opinionated data formats, such as Mosaic Data Shard (MDS) or TFRecords, with dataloading directly from open formats (Apache Parquet, JPEG) into PyTorch or Numpy while saturating network bandwidth.
+            </p>
+            <h3>Dataloading for Training</h3>
+            <p>
+              Fast and memory efficient dataloaders from open file formats such as Parquet and JPEG.
+            </p>
+            <h3>Model Batch Inference on GPUs</h3>
+            <p>
+              Schedule large-scale model batch inference on a fleet of GPUs on a distributed cluster/
             </p>
             <img src="_static/use-cases-3.png" class="use-cases-image" />
           </div>
