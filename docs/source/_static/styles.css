@@ -501,7 +501,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 .testimonials .quote-box .h2 {
@@ -1091,7 +1091,7 @@
 
   .testimonials .customer-quotes .quote-box {
     height: 300px;
-    width: 345px;
+    width: 325px;
     padding: 14px 16px;
     margin: 6px;
   }
@@ -1116,7 +1116,7 @@
   
   .testimonials .quote-box .customer-logo {
     max-height: 25px;
-    max-width: 115px;
+    max-width: 105px;
   }
 
   .community-section .wrapper .left-two-thirds {
