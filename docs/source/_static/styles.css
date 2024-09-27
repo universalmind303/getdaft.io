@@ -339,6 +339,11 @@
   border-left: 6px solid black;
 }
 
+.use-cases-section .tabs .tab {
+  flex: 1;
+  text-align: center;
+}
+
 .use-cases-section .tabs .tab .title {
   text-decoration: none;
   color: var(--gray-outline);
