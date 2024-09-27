@@ -1088,11 +1088,12 @@
 }
 
 @media (max-width: 800px) {
+
   .testimonials .customer-quotes .quote-box {
     height: 300px;
     width: 345px;
     padding: 14px 16px;
-
+    margin: 6px;
   }
 
   .testimonials .quote-box .h2 {
