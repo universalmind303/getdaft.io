@@ -100,6 +100,8 @@
             <div class="right-use-cases">
               <pre class="pre-code">
                           <code class="language-python" style="background: var(--light-background)">
+# Aggregate data in an ETL job and write to Delta Lake
+
 import daft
 
 df = daft.from_pydict(
@@ -113,7 +115,6 @@ df = df.groupby("product").agg(
     daft.col("price").mean().alias("avg_price"),
     daft.col("quantity").sum().alias("total_quantity"),
 )
-
 df.write_deltalake("aggregate_sales")
                           </code>
                           </pre>
@@ -149,11 +150,13 @@ df.write_deltalake("aggregate_sales")
             <div class="right-use-cases">
               <pre class="pre-code">
                           <code class="language-python" style="background: var(--light-background)">
+# Query parquet data from S3 using SQL
+
 import daft
+
 daft.set_planning_config(
     default_io_config=daft.io.IOConfig(s3=daft.io.S3Config(anonymous=True))
 )
-
 df = daft.read_parquet(
     "s3://daft-public-data/nyc-taxi-dataset-2023-jan-deltalake/tpep_pickup_day=1/"
 )
@@ -168,7 +171,6 @@ WHERE
     trip_distance > 1.0
     AND total_amount > 10.0"""
 )
-
 df.show()
                           </code>
                           </pre>
@@ -204,11 +206,13 @@ df.show()
             <div class="right-use-cases">
               <pre class="pre-code">
                           <code class="language-python" style="background: var(--light-background)">
+# Load images from URLs and decode them into PyTorch tensors
+
 import daft
+
 daft.set_planning_config(
     default_io_config=daft.io.IOConfig(s3=daft.io.S3Config(anonymous=True))
 )
-
 df = daft.from_pydict(
     {
         "image_urls": [
@@ -218,7 +222,6 @@ df = daft.from_pydict(
         ],
     }
 )
-
 df = df.with_column("data", df["image_urls"].url.download())
 df = df.with_column("images", df["data"].image.decode())
 
@@ -249,6 +252,8 @@ for batch in pytorch_ds:
           <div class="right-use-cases">
             <pre class="pre-code">
               <code class="language-python" style="background: var(--light-background)">
+# Aggregate data in an ETL job and write to Delta Lake
+
 import daft
 
 df = daft.from_pydict(
@@ -262,7 +267,6 @@ df = df.groupby("product").agg(
     daft.col("price").mean().alias("avg_price"),
     daft.col("quantity").sum().alias("total_quantity"),
 )
-
 df.write_deltalake("aggregate_sales")
               </code>
               </pre>
@@ -286,11 +290,13 @@ df.write_deltalake("aggregate_sales")
           <div class="right-use-cases">
             <pre class="pre-code">
                       <code class="language-python" style="background: var(--light-background)">
+# Query parquet data from S3 using SQL
+
 import daft
+
 daft.set_planning_config(
     default_io_config=daft.io.IOConfig(s3=daft.io.S3Config(anonymous=True))
 )
-
 df = daft.read_parquet(
     "s3://daft-public-data/nyc-taxi-dataset-2023-jan-deltalake/tpep_pickup_day=1/"
 )
@@ -305,7 +311,6 @@ WHERE
     trip_distance > 1.0
     AND total_amount > 10.0"""
 )
-
 df.show()
                       </code>
                       </pre>
@@ -329,11 +334,13 @@ df.show()
           <div class="right-use-cases">
             <pre class="pre-code">
                       <code class="language-python" style="background: var(--light-background)">
+# Load images from URLs and decode them into PyTorch tensors
+
 import daft
+
 daft.set_planning_config(
     default_io_config=daft.io.IOConfig(s3=daft.io.S3Config(anonymous=True))
 )
-
 df = daft.from_pydict(
     {
         "image_urls": [
@@ -343,7 +350,6 @@ df = daft.from_pydict(
         ],
     }
 )
-
 df = df.with_column("data", df["image_urls"].url.download())
 df = df.with_column("images", df["data"].image.decode())
 
