@@ -34,11 +34,11 @@
 .h1 {
   font-family: "Kanit", sans-serif;
   color: var(--purple-title-text);
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 400;
-  line-height: 80px;
+  line-height: 72px;
   margin-bottom: 0;
-  margin-top: 50px;
+  margin-top: 75px;
 }
 
 .h2 {
@@ -52,6 +52,7 @@
 
 .bold {
   font-weight: 700;
+  color: var(--purple-title-text);
 }
 
 .thin {
@@ -232,7 +233,7 @@
 }
 
 .button-section {
-  margin: 40px auto;
+  margin: 30px auto;
 }
 
 .hero-section p {
@@ -240,8 +241,9 @@
 }
 
 .hero-section .hero-content {
-  max-width: 600px;
-  padding: 15px 25px 0px 25px;
+  /* max-width: 600px; */
+  max-width: 650px;
+  padding: 25px 25px 0px 25px;
 }
 
 /* Capabilites */
@@ -320,7 +322,7 @@
 
 .use-cases-section .wrapper {
   margin: 0 auto;
-  padding: 75px 76px 25px 76px;
+  padding: 15px 100px 25px 100px;
 }
 
 .use-cases-section .tabs {
@@ -328,7 +330,7 @@
   justify-content: space-between;
   align-items: center;
   background: white;
-  padding: 10px 30px;
+  padding: 20px 30px;
   max-width: 1290px;
   margin: 0 auto;
   overflow: hidden;
@@ -338,22 +340,42 @@
   border-left: 6px solid black;
 }
 
-.use-cases-section .tabs .tab .title {
+.use-cases-section .tabs .tab {
+  flex: 1;
+  text-align: center;
+}
+
+.use-cases-section .tabs .tab .title,
+.use-cases-section .tabs .tab .title .h2,
+.use-cases-section .tabs .tab .title .h3 {
   text-decoration: none;
   color: var(--gray-outline);
-  font-size: 20px;
-  padding: 10px;
+  /* padding: 10px; */
   border: none;
-  display: inline-block;
+  /* display: inline-block; */
   background: white;
   transition-duration: 0.3s;
 }
 
-.use-cases-section .tabs .title:hover {
+.use-cases-section .tabs .tab .title .h2 {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.use-cases-section .tabs .tab .title .h3 {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.use-cases-section .tabs .title:hover,
+.use-cases-section .tabs .tab .title:hover .h2,
+.use-cases-section .tabs .tab .title:hover .h3 {
   color: var(--purple-title-text);
 }
 
-.use-cases-section .tabs .tab .title._active {
+.use-cases-section .tabs .tab .title._active,
+.use-cases-section .tabs .tab .title._active .h2,
+.use-cases-section .tabs .tab .title._active .h3  {
   color: var(--purple-title-text);
 }
 
@@ -375,6 +397,7 @@
 .use-cases-section .wrapper-use-cases .wrapper {
   max-width: 100%;
   background: white;
+  margin: 0 auto;
 }
 
 .use-cases-section .wrapper-use-cases .wrapper .use-cases-box {
@@ -383,7 +406,7 @@
   gap: 30px;
   position: relative;
   max-width: 1290px;
-  margin: 0px auto;
+  margin: 20px auto;
 }
 
 .use-cases-section .wrapper-use-cases .wrapper .use-cases-box .use-cases-image {
@@ -396,6 +419,7 @@
   width: 50%;
   padding: 10px 0px;
   gap: 100px;
+  margin: 20px;
 }
 
 .use-cases-section .wrapper-use-cases .wrapper .use-cases-box .right-use-cases {

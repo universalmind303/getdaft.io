@@ -41,14 +41,12 @@
   </header>
   <section class="hero-section">
     <h1 class="h1">
-      Fast and Distributed<br />
-      Python Query Engine
+      Unified Engine for Data <br>Analytics, Engineering & ML/AI
     </h1>
 
     <p class="hero-content">
-      Daft is a framework for ETL, analytics and ML/AI at scale. Its familiar
-      Python Dataframe API is built to outperform Spark in performance and ease
-      of use.
+      <!-- Daft is a unified data engine for <b class="bold">data engineering</b>, <b class="bold"> analytics</b> and <b class="bold">ML/AI</b>.  -->
+      Daft exposes both <b class="bold">SQL and Python DataFrame</b> interfaces as first-class citizens and is written in Rust. Daft provides a snappy and <b class="bold">delightful local interactive experience</b>, but also seamlessly scales to <b class="bold">petabyte-scale distributed workloads</b>.
     </p>
 
     <div class="button-section">
@@ -67,8 +65,8 @@
     <div class="wrapper">
       <p class="eyebrow-text">USE CASES</p>
       <h2 class="h2">
-        Daft provides a familar and easy to use <br />
-        Python dataframe API for:
+        Daft exposes both SQL and Python<br />
+        DataFrame interfaces for:
       </h2>
     </div>
     <div class="tabs">
@@ -76,24 +74,27 @@
         <a
           href=""
           class="title"
-          id="MultimodalID"
-          data-target="Multimodal"
-          data-target-mobile="Multimodal-mobile"
-          >Multimodal Data Processing</a
-        >
+          id="Data-EngID"
+          data-target="Data-Eng"
+          data-target-mobile="Data-Eng-mobile"
+          >
+          <h3 class="h3"><i>DATAFRAMES</i></h3>
+          <h2 class="h2">Data Engineering</h2>
+        </a>
       </div>
-      <div class="wrapper-use-cases mobile" id="Multimodal-mobile">
+      <div class="wrapper-use-cases mobile" id="Data-Eng-mobile">
         <!--Mobile content-->
         <div class="wrapper">
           <div class="use-cases-box">
             <div class="left-use-cases">
               <p>
-                Daft exposes a powerful type system that can represent complex
-                datatypes such as JSON, URLs, Images and Tensors. Operations can
-                be expressed using Daft's Expressions API, allowing for easy
-                manipulation of these complex datatypes that is then lazily
-                executed on Daft's blazing fast Rust core engine.
+                <i>Combine the performance of DuckDB, Pythonic UX of Polars and scalability of Apache Spark for data engineering from MB to PB scale</i>
               </p>
+              <ul>
+                <li>Scale ETL workflows effortlessly from local to distributed environments</li>
+                <li>Enjoy a Python-first experience without JVM dependency hell</li>
+                <li>Leverage native integrations with cloud storage, open catalogs, and data formats</li>
+              </ul>
               <img src="_static/use-cases-1.png" class="use-cases-image" />
             </div>
             <div class="right-use-cases">
@@ -127,25 +128,24 @@
         <a
           href=""
           class="title"
-          data-target="Batch-Data"
-          data-target-mobile="Batch-Data-mobile"
-          >Batch Data Processing</a
-        >
+          data-target="Data-Analytics"
+          data-target-mobile="Data-Analytics-mobile"
+          >
+          <h3 class="h3"><i>SQL</i></h3>
+          <h2 class="h2">Data Analytics</h2>
+        </a>
       </div>
-      <div class="wrapper-use-cases mobile" id="Batch-Data-mobile">
+      <div class="wrapper-use-cases mobile" id="Data-Analytics-mobile">
         <!--Mobile content-->
         <div class="wrapper">
           <div class="use-cases-box">
             <div class="left-use-cases">
-              <p>
-                Daft supports large-scale tabular batch data processing with its
-                familiar DataFrame interface. Its Rust I/O engine is heavily
-                tuned for cloud based workloads, and boasts record-setting
-                efficiency when reading and writing data in formats such as
-                Apache Parquet. Daft also applies powerful optimizations with
-                its built in query optimizer, ensuring that your query is
-                executed efficiently when run on data at terabyte-scales.
-              </p>
+              <p><i>Blend the snappiness of DuckDB with the scalability of Spark/Trino for unified local and distributed analytics</i></p>
+              <ul>
+                <li>Utilize complementary SQL and Python interfaces for versatile analytics</li>
+                <li>Perform snappy local exploration with DuckDB-like performance</li>
+                <li>Seamlessly scale to the cloud, outperforming distributed engines like Spark and Trino</li>
+              </ul>
               <img src="_static/use-cases-2.png" class="use-cases-image" />
             </div>
             <div class="right-use-cases">
@@ -153,12 +153,11 @@
                           <code class="language-python" style="background: var(--light-background)">
   1   import daft
   2
-  3   df = daft.read_parquet(
-  4       "s3://source-bucket/**/*.parquet"
-  5   )
-  6   df = df.sort("foo")
-  7
-  8   df.write_parquet("s3://destination-bucket/")
+  3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
+  4
+  5   daft.sql("""SELECT * FROM df ORDER BY foo""")
+  6
+  7   df.write_parquet("s3://destination-bucket/")
                           </code>
                           </pre>
             </div>
@@ -170,26 +169,24 @@
         <a
           href=""
           class="title"
-          data-target="ML-Training"
-          data-target-mobile="ML-Training-mobile"
-          >Data Ingestion for ML Training</a
-        >
+          data-target="ML-AI"
+          data-target-mobile="ML-AI-mobile"
+          >
+          <h3 class="h3"><i>DATALOADER</i></h3>
+          <h2 class="h2">ML/AI</h2>
+        </a>
       </div>
-      <div class="wrapper-use-cases mobile" id="ML-Training-mobile">
+      <div class="wrapper-use-cases mobile" id="ML-AI-mobile">
         <!--Mobile content-->
         <div class="wrapper">
           <div class="use-cases-box">
             <div class="left-use-cases">
-              <p>
-                Daft provides tight integration with frameworks such as Pytorch
-                and Ray to efficiently ingest data into your data-hungry ML
-                model training workloads. Its blazing fast I/O and kernels
-                allows for maximizing GPU utilization by pipelining your data
-                through downloading, pre-processing and random per-epoch
-                shuffling. Daft also leverages Apache Arrow memory formats,
-                allowing for zero-copy data transfer between dataloading and
-                model training.
-              </p>
+              <p><i>Streamline ML/AI workflows with efficient dataloading from open formats like Parquet and JPEG</i></p>
+              <ul>
+                <li>Load data efficiently from open formats directly into PyTorch or NumPy</li>
+                <li>Schedule large-scale model batch inference on distributed GPU clusters</li>
+                <li>Optimize data curation with advanced clustering, deduplication, and filtering</li>
+              </ul>
               <img src="_static/use-cases-3.png" class="use-cases-image" />
             </div>
             <div class="right-use-cases">
@@ -210,113 +207,69 @@
           </div>
         </div>
       </div>
-      <hr class="use-cases-line" width="1" size="60" />
-      <div class="tab">
-        <a
-          href=""
-          class="title"
-          data-target="EDA"
-          data-target-mobile="EDA-mobile"
-          >EDA (Data Science at Scale)</a
-        >
-      </div>
-      <div class="wrapper-use-cases mobile" id="EDA-mobile">
-        <!--Mobile content-->
-        <div class="wrapper">
-          <div class="use-cases-box">
-            <div class="left-use-cases">
-              <p>
-                Daft is built for usage from interactive environments such as
-                Jupyter notebooks. This lets you perform interactive
-                explorations of your data with just your local development
-                environment. Daft's expressions API also lets you perform
-                operations such as groupby, aggregations and joins.
-              </p>
-              <img src="_static/use-cases-4.png" class="use-cases-image" />
-            </div>
-            <div class="right-use-cases">
-              <pre class="pre-code">
-                          <code class="language-python" style="background: var(--light-background)">
-  1   import daft
-  2
-  3   df = daft.from_pydict(
-  4       {
-  5           "A": ["foo", "bar", "foo", "bar"],
-  6           "B": [i for i in range(4)],
-  7       }
-  8   )
-  9   grouped_df = df.groupby(df["A"])
-  10  aggregated_df = grouped_df.agg(
-  11      [
-  12          (grouped_df["B"].alias("B_sum"), "sum"),
-  13      ]
-  14  )
-  16  aggregated_df.collect()
-                          </code>
-                          </pre>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <div class="wrapper-use-cases" id="Multimodal">
+    <div class="wrapper-use-cases" id="Data-Eng">
       <div class="wrapper">
         <div class="use-cases-box">
           <div class="left-use-cases">
-            <p>
-              Daft exposes a powerful type system that can represent complex
-              datatypes such as JSON, URLs, Images and Tensors. Operations can
-              be expressed using Daft's Expressions API, allowing for easy
-              manipulation of these complex datatypes that is then lazily
-              executed on Daft's blazing fast Rust core engine.
-            </p>
+            <p><i>Combine the performance of DuckDB, Pythonic UX of Polars and scalability of Apache Spark for data engineering from MB to PB scale</i></p>
+            <ul>
+              <li>Scale ETL workflows effortlessly from local to distributed environments</li>
+              <li>Enjoy a Python-first experience without JVM dependency hell</li>
+              <li>Leverage native integrations with cloud storage, open catalogs, and data formats</li>
+            </ul>
             <img src="_static/use-cases-1.png" class="use-cases-image" />
           </div>
           <div class="right-use-cases">
             <pre class="pre-code">
-                      <code class="language-python" style="background: var(--light-background)">
-  1   import daft
-  2
-  3   df = daft.from_pydict({
-  4       "image_urls": ["a", "b", "c"],
-  5   })
-  6
-  7   df = df.with_column("data", df["image_urls"].url.download())
-  8   df = df.with_column("images", df["data"].image.decode())
-  9
-  10  df.show()
-                      </code>
-                      </pre>
+              <code class="language-python" style="background: var(--light-background)">
+1   import daft
+2
+3   df = daft.from_pydict(
+4       {
+5           "image_urls": ["a", "b", "c"],
+6       }
+7   )
+8
+9   df = df.with_column(
+10      "data", 
+11      df["image_urls"].url.download()
+12  )
+13  df = df.with_column(
+14      "images", 
+15      df["data"].image.decode()
+16  )
+17  df.show()
+              </code>
+              </pre>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="wrapper-use-cases" id="Batch-Data">
+    <div class="wrapper-use-cases" id="Data-Analytics">
       <div class="wrapper">
         <div class="use-cases-box">
           <div class="left-use-cases">
-            <p>
-              Daft supports large-scale tabular batch data processing with its
-              familiar DataFrame interface. Its Rust I/O engine is heavily tuned
-              for cloud based workloads, and boasts record-setting efficiency
-              when reading and writing data in formats such as Apache Parquet.
-              Daft also applies powerful optimizations with its built in query
-              optimizer, ensuring that your query is executed efficiently when
-              run on data at terabyte-scales.
-            </p>
+            <p><i>Blend the snappiness of DuckDB with the scalability of Spark/Trino for unified local and distributed analytics</i></p>
+            <ul>
+              <li>Utilize complementary SQL and Python interfaces for versatile analytics</li>
+              <li>Perform snappy local exploration with DuckDB-like performance</li>
+              <li>Seamlessly scale to the cloud, outperforming distributed engines like Spark and Trino</li>
+            </ul>
             <img src="_static/use-cases-2.png" class="use-cases-image" />
           </div>
           <div class="right-use-cases">
             <pre class="pre-code">
                       <code class="language-python" style="background: var(--light-background)">
-  1   import daft
-  2
-  3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
-  4   df = df.sort("foo")
-  5
-  6   df.write_parquet("s3://destination-bucket/")
+    1   import daft
+    2
+    3   df = daft.read_parquet("s3://source-bucket/**/*.parquet")
+    4
+    5   daft.sql("""SELECT * FROM df ORDER BY foo""")
+    6
+    7   df.write_parquet("s3://destination-bucket/")
                       </code>
                       </pre>
           </div>
@@ -324,19 +277,16 @@
       </div>
     </div>
 
-    <div class="wrapper-use-cases" id="ML-Training">
+    <div class="wrapper-use-cases" id="ML-AI">
       <div class="wrapper">
         <div class="use-cases-box">
           <div class="left-use-cases">
-            <p>
-              Daft provides tight integration with frameworks such as Pytorch
-              and Ray to efficiently ingest data into your data-hungry ML model
-              training workloads. Its blazing fast I/O and kernels allows for
-              maximizing GPU utilization by pipelining your data through
-              downloading, pre-processing and random per-epoch shuffling. Daft
-              also leverages Apache Arrow memory formats, allowing for zero-copy
-              data transfer between dataloading and model training.
-            </p>
+            <p><i>Streamline ML/AI workflows with efficient dataloading from open formats like Parquet and JPEG</i></p>
+            <ul>
+              <li>Load data efficiently from open formats directly into PyTorch or NumPy</li>
+              <li>Schedule large-scale model batch inference on distributed GPU clusters</li>
+              <li>Optimize data curation with advanced clustering, deduplication, and filtering</li>
+            </ul>
             <img src="_static/use-cases-3.png" class="use-cases-image" />
           </div>
           <div class="right-use-cases">
@@ -358,43 +308,6 @@
       </div>
     </div>
 
-    <div class="wrapper-use-cases" id="EDA">
-      <div class="wrapper">
-        <div class="use-cases-box">
-          <div class="left-use-cases">
-            <p>
-              Daft is built for usage from interactive environments such as
-              Jupyter notebooks. This lets you perform interactive explorations
-              of your data with just your local development environment. Daft's
-              expressions API also lets you perform operations such as groupby,
-              aggregations and joins.
-            </p>
-            <img src="_static/use-cases-4.png" class="use-cases-image" />
-          </div>
-          <div class="right-use-cases">
-            <pre class="pre-code">
-                      <code class="language-python" style="background: var(--light-background)">
-  1   import daft
-  2
-  3   df = daft.from_pydict(
-  4       {
-  5           "A": ["foo", "bar", "foo", "bar"],
-  6           "B": [i for i in range(4)],
-  7       }
-  8   )
-  9   grouped_df = df.groupby(df["A"])
-  10  aggregated_df = grouped_df.agg(
-  11      [
-  12          (grouped_df["B"].alias("B_sum"), "sum"),
-  13      ]
-  14  )
-  16  aggregated_df.collect()
-                      </code>
-                      </pre>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
 

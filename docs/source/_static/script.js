@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() { 
-    document.getElementById("MultimodalID").click();
+    document.getElementById("Data-EngID").click();
 });
 
 /* Nav Bar */ 
