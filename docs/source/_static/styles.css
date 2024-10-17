@@ -142,8 +142,7 @@
 }
 
 .nav-bar .logo #nav-logo {
-  width: 81px;
-  height: 31px;
+  width: 80px;
 }
 
 .nav-bar .nav-menu {
@@ -862,7 +861,7 @@
 }
 
 .footer-logo .footer-image {
-  height: 31px;
+  width: 80px;
 }
 
 .footer .footer-left {
