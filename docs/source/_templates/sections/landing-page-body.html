@@ -161,13 +161,13 @@ df = daft.read_parquet(
     "s3://daft-public-data/nyc-taxi-dataset-2023-jan-deltalake/tpep_pickup_day=1/"
 )
 df = daft.sql(
-    """SELECT 
+    """SELECT
     VendorID,
     trip_distance,
     total_amount
-FROM 
+FROM
     df
-WHERE 
+WHERE
     trip_distance > 1.0
     AND total_amount > 10.0"""
 )
@@ -301,13 +301,13 @@ df = daft.read_parquet(
     "s3://daft-public-data/nyc-taxi-dataset-2023-jan-deltalake/tpep_pickup_day=1/"
 )
 df = daft.sql(
-    """SELECT 
+    """SELECT
     VendorID,
     trip_distance,
     total_amount
-FROM 
+FROM
     df
-WHERE 
+WHERE
     trip_distance > 1.0
     AND total_amount > 10.0"""
 )
@@ -537,7 +537,7 @@ for batch in pytorch_ds:
       </div>
     </div>
   </section>
-  
+
   <section class="ecosystem-section">
     <div class="wrapper">
       <div class="left-ecosystem">
@@ -574,21 +574,21 @@ for batch in pytorch_ds:
           <ul class="ecosystem-list">
             <li class="ecosystem-item">
               <a
-                href="/projects/docs/en/stable/user_guide/integrations/iceberg.html"
+                href="/projects/docs/en/stable/integrations/iceberg.html"
                 class="ecosystem-link"
                 ><img src="_static/apacheIceberg.png" class="ecosystem-image"
               /></a>
             </li>
             <li class="ecosystem-item">
               <a
-                href="/projects/docs/en/stable/user_guide/integrations/delta_lake.html"
+                href="/projects/docs/en/stable/integrations/delta_lake.html"
                 class="ecosystem-link"
                 ><img src="_static/deltaLake.png" class="ecosystem-image"
               /></a>
             </li>
             <li class="ecosystem-item">
               <a
-                href="/projects/docs/en/stable/user_guide/integrations/ray.html"
+                href="/projects/docs/en/stable/integrations/ray.html"
                 class="ecosystem-link"
                 ><img src="_static/ray.png" class="ecosystem-image"
               /></a>
@@ -604,23 +604,30 @@ for batch in pytorch_ds:
             </li>
             <li class="ecosystem-item">
               <a
-                href="/projects/docs/en/stable/user_guide/integrations/microsoft-azure.html"
+                href="/projects/docs/en/stable/integrations/azure.html"
                 class="ecosystem-link"
                 ><img src="_static/azure.png" class="ecosystem-image"
               /></a>
             </li>
             <li class="ecosystem-item">
               <a
-                href="/projects/docs/en/stable/user_guide/integrations/aws.html"
+                href="/projects/docs/en/stable/integrations/aws.html"
                 class="ecosystem-link"
                 ><img src="_static/aws.png" class="ecosystem-image"
               /></a>
             </li>
             <li class="ecosystem-item">
               <a
-                href="/projects/docs/en/stable/user_guide/integrations/hudi.html"
+                href="/projects/docs/en/stable/integrations/hudi.html"
                 class="ecosystem-link"
                 ><img src="_static/apachehudi.png" class="ecosystem-image"
+              /></a>
+            </li>
+            <li class="ecosystem-item">
+              <a
+                href="/projects/docs/en/stable/integrations/unity_catalog.html"
+                class="ecosystem-link"
+                ><img src="_static/unitycatalog.png" class="ecosystem-image"
               /></a>
             </li>
           </ul>
