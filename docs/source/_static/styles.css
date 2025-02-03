@@ -587,7 +587,7 @@
   .ecosystem-link
   .ecosystem-image {
   height: 60px;
-  padding: 0px 15px;
+  padding: 5px 15px;
   border-radius: 15px;
   margin: 8px;
   border: 1px solid var(--gray-outline);
@@ -1128,15 +1128,15 @@
     height: 75px;
     margin-top: 15px;
   }
-  
+
   .testimonials .quote-box .customer-name {
     font-size: 18px;
   }
-  
+
   .testimonials .quote-box .customer-role {
     font-size: 12px;
   }
-  
+
   .testimonials .quote-box .customer-logo {
     max-height: 25px;
     max-width: 105px;
