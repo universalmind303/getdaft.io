@@ -3,11 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=https://github.com/Eventual-Inc/Daft">
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN4QSRPV0K"></script>
     <script>
-      const params = window.location.search;
-      window.location.href = "https://github.com/Eventual-Inc/Daft" + params;
+      // Initialize Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YN4QSRPV0K', {
+        // This allows all URL parameters (including UTMs) to be sent automatically
+        // with the pageview to Google Analytics
+        'send_page_view': true
+      });
+
+      // Create an event that captures the redirect
+      gtag('event', 'github_redirect', {
+        'page_location': window.location.href,
+        'page_path': window.location.pathname + window.location.search
+      });
+
+      // Delay redirect slightly to ensure analytics has time to fire
+      setTimeout(function() {
+        window.location.href = "https://github.com/Eventual-Inc/Daft" + window.location.search;
+      }, 300);
     </script>
   </head>
   <body>
