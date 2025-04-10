@@ -3,6 +3,42 @@
   <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN4QSRPV0K"></script>
+    <script>
+      // Initialize Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YN4QSRPV0K', {
+        // This allows all URL parameters (including UTMs) to be sent automatically
+        // with the pageview to Google Analytics
+        'send_page_view': true
+      });
+
+      // Create an event that captures the redirect
+      gtag('event', 'slack_redirect', {
+        'page_location': window.location.href,
+        'page_path': window.location.pathname + window.location.search
+      });
+
+      // Delay redirect slightly to ensure analytics has time to fire
+      setTimeout(function() {
+        window.location.href = "https://join.slack.com/t/dist-data/shared_invite/zt-2e77olvxw-uyZcPPV1SRchhi8ah6ZCtg" + window.location.search;
+      }, 300);
+    </script>
+  </head>
+  <body>
+    Redirecting to GitHub... <a href="https://join.slack.com/t/dist-data/shared_invite/zt-2e77olvxw-uyZcPPV1SRchhi8ah6ZCtg">Click here if not redirected</a>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
     <meta http-equiv="refresh" content="0; url=https://join.slack.com/t/dist-data/shared_invite/zt-2e77olvxw-uyZcPPV1SRchhi8ah6ZCtg">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN4QSRPV0K"></script>
     <script>
