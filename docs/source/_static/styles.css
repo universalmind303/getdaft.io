@@ -895,7 +895,7 @@
 /* Readthedocs flyout */
 
 readthedocs-flyout {
-  display: none;
+  display: none !important;
 }
 
 /* Responsive */
