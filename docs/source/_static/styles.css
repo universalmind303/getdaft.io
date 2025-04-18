@@ -892,6 +892,12 @@
   background-color: var(--purple-title-text);
 }
 
+/* Readthedocs flyout */
+
+.readthedocs-flyout {
+  display: none;
+}
+
 /* Responsive */
 
 @media (max-width: 1240px) {
