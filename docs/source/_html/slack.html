@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Redirecting...</title>
+    <title>Redirecting to Daft Slack...</title>
+    <!-- Automatic redirect after 1 seconds -->
+    <meta http-equiv="refresh" content="1;url=https://github.com/Eventual-Inc/Daft">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN4QSRPV0K"></script>
     <script>
@@ -21,6 +23,11 @@
         'page_location': window.location.href,
         'page_path': window.location.pathname + window.location.search
       });
+
+      // JavaScript redirect as a backup
+      setTimeout(function() {
+        window.location.href = "https://github.com/Eventual-Inc/Daft";
+      }, 3000);
     </script>
   </head>
   <body>
