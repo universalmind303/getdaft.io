@@ -1,5 +1,5 @@
 [project]
-name = "quickstart-examples"
+name = "examples"
 python_version = "3.11"
 
 
