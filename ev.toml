@@ -1,0 +1,29 @@
+[project]
+name = "quickstart-examples"
+python_version = "3.11"
+
+
+# default environments that are applied to all workflows
+[defaults.environment]
+# HUGGINGFACE_HUB_TOKEN = "${secrets.huggingface_token}"
+AWS_DEFAULT_REGION = "us-west-2"
+
+
+# Default compute settings for ALL workflows
+[defaults.compute]
+cpu = 2
+memory = "8GB"
+image = "eventualai/python:3.11"
+
+[workflows.helloworld]
+entrypoint = "helloworld/main.py"
+# override default compute settings
+compute = { cpu = 1, memory = "2GB" }
+
+[workflows.audio_transcribe]
+entrypoint = "audio_transcribe/main.py"
+# custom environment variables for audio transcription workflow
+environment = { WHISPER_MODEL = "medium", BATCH_SIZE = "16" }
+
+[workflows.distributed_ml]
+entrypoint = "distributed_ml/main.py"
